@@ -18,4 +18,24 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     console.log(ctx)
 
+    let coords = {
+        x: 0,
+        y: 0
+    }
+
+    const gameLoop = ()=>{
+
+        ctx.beginPath()
+        ctx.arc(canvas.width / 2 + coords.x, canvas.height / 2 + coords.y, 30, 0 , Math.PI * 2)
+        ctx.stroke()
+
+        coords.x++
+        coords.y++
+
+        requestAnimationFrame(gameLoop)
+
+    }
+
+    gameLoop()
+
 })
