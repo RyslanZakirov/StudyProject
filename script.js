@@ -25,12 +25,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     const gameLoop = ()=>{
 
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+
         ctx.beginPath()
         ctx.arc(canvas.width / 2 + coords.x, canvas.height / 2 + coords.y, 30, 0 , Math.PI * 2)
         ctx.stroke()
 
         coords.x++
         coords.y++
+
+        ctx.beginPath()
+        ctx.rect(canvas.width / 2 + coords.x, canvas.height / 2, 100, 100)
+        ctx.stroke()
 
         requestAnimationFrame(gameLoop)
 
