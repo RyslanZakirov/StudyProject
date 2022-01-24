@@ -6,6 +6,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
     canvas.width = document.body.offsetWidth
     canvas.height = document.body.offsetHeight
 
+    ctx.beginPath()
+    ctx.arc(canvas.width / 2, canvas.height / 2, 20, 0, Math.PI * 2)
+    ctx.fillStyle = "red"
+    ctx.fill()
+
+    ctx.beginPath()
+    ctx.rect(100, 100, 400, 400)
+    ctx.strokeStyle = "orange"
+    ctx.stroke()
+
     console.log(ctx)
 
 })
